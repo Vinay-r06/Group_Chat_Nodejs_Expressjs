@@ -167,7 +167,7 @@ body{
 
 
 
-  #loginForm {
+  #loginPage {
     /* padding: 3rem; */
     margin: auto;
     align-content: center;
@@ -183,19 +183,19 @@ body{
 
   }
 
-  #loginForm label {
+  #loginPage label {
     display: block;
   }
 
 
-  #loginForm input[type='email'] {
+  #loginPage input[type='email'] {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
-  #loginForm input[type='password'] {
+  #loginPage input[type='password'] {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
