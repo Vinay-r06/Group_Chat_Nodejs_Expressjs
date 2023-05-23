@@ -1,0 +1,252 @@
+.btn-right{
+    float: right;
+}
+
+body{
+    background-color: black;
+    color-scheme: dark;
+    color: aquamarine;
+
+}
+
+.btn{
+    block-size: 35px;
+    background-color: #333;
+    color: #ccc;
+
+}
+
+.edit-btn{
+
+    margin-right: 4px;
+}
+.edit-btn:hover{
+    background-color: rgb(48, 53, 53);
+}
+.centered{
+    text-align: center;
+}
+.btn-prm{
+    margin: 10px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: rgb(34, 32, 32);
+  }
+
+  h3.pg{
+    line-height: .8;
+  }
+  .expenseBody{
+    background-color: black;
+    margin : 5%;
+  };
+
+ .centered{
+  text-align: center;
+ }
+
+
+
+
+
+  .container {
+    margin: auto;
+    width: 500px;
+    overflow: auto;
+    align-items: center;
+
+    /* padding: 3rem 2rem; */
+  }
+
+  #signUpPage {
+    /* padding: 3rem; */
+    margin: auto;
+    align-content: center;
+    max-width: 600px;
+    min-width: 300px;
+    padding-top: 2.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 2.5rem;
+    color: white;
+    background-color: rgb(13, 0, 37);
+    /* opacity: 70%;  */
+    border-radius: 15px;
+    /* border-bottom-right-radius: 15px; */
+  }
+
+  #signUpPage label {
+    display: block;
+  }
+
+  #signUpPage input[type='text'] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  #signUpPage input{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  #signUpPage input[type='email'] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  #signUpPage input[type='password'] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .btn-lg {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+
+
+  .btn-sm {
+    display: block;
+    width: 70%;
+    padding: 10px 15px;
+    border: 0;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    margin: 5px 0;
+
+  }
+
+  #myForm label {
+    display: block;
+  }
+
+  .btn-e{
+
+    margin-right: 4px;
+}
+
+.btn-lg:hover{
+  background-color: #444;
+}
+
+  .bg-dark {
+    background: #333;
+    color: #fff;
+  }
+
+  .error {
+    background: orangered;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+  }
+
+
+
+  #loginForm {
+    /* padding: 3rem; */
+    margin: auto;
+    align-content: center;
+    max-width: 600px;
+    min-width: 300px;
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+    color: white;
+    background-color: rgb(13, 0, 37);
+    border-radius: 15px;
+
+  }
+
+  #loginForm label {
+    display: block;
+  }
+
+
+  #loginForm input[type='email'] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  #loginForm input[type='password'] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+
+
+
+  .container {
+    margin: auto;
+    width: 500px;
+    overflow: auto;
+    align-items: center;
+
+    /* padding: 3rem 2rem; */
+  }
+
+  #forgotForm {
+    /* padding: 3rem; */
+    margin: auto;
+    align-content: center;
+    max-width: 600px;
+    min-width: 300px;
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+    color: white;
+    background-color: rgb(13, 0, 37);
+    /* opacity: 70%;  */
+    border-radius: 15px;
+    /* border-bottom-right-radius: 15px; */
+  }
+
+  #forgotForm label {
+    display: block;
+  }
+
+
+  #forgotForm input[type='email'] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .btn-danger{
+    background-color: rgb(182, 14, 14);
+  }
+  .btn-danger:hover {
+    background: #b61e1e;
+  }
