@@ -1,6 +1,9 @@
 const express= require("express");
+const path= require('path');
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 const bodyParser=require("body-parser");
 
@@ -20,17 +23,27 @@ app.use(bodyParser.json());
 
 
 const userRouter= require ("./router/userRouter");
+const chatRouter= require ("./router/chatRouter");
+
 
 
 app.use('/user', userRouter);
+app.use('/chats', chatRouter);
 
 
 app.use((req,res,next)=>{
     res.status(404).send("<h1>page not found</h1>");
 });
 
+const User=require('./models/userModel');
+const Chat=require('./models/chatModel')
+
+User.hasMany(Chat);
+Chat.belongsTo(User);
+
 sequelize
-        .sync()
+       .sync()
+       // .sync({force:true}) 
         .then((result)=>{
 
     app.listen(3000);
