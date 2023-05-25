@@ -1,7 +1,10 @@
 const User = require('../models/userModel');
 const bcrypt=require('bcrypt');
 const sequelize=require('../util/database');
-const jwt= require('jsonwebtoken')
+const jwt= require('jsonwebtoken');
+const {Op} = require('sequelize');
+const e = require('cors');
+
 
 
 
@@ -27,7 +30,7 @@ const postSignup= async (req,res)=>{
         return res.status(400).json({err: "bad parameters . something is missing"})
      }
    
-     const user = await User.findOne({where:{email:email}});
+     const user = await User.findOne({ where: {[Op.or]:[{email:email},{phone:phone}] } });
 
      if(!user){
 
@@ -38,9 +41,10 @@ const postSignup= async (req,res)=>{
       await t.rollback();
       console.log('err in hash',err);
      }
-        await User.create({ name,phone,email, password:hash })
+      const userData = await User.create({ name,phone,email, password:hash },{transaction:t})
+        console.log('userData checking',userData);
         await t.commit();
-      return  res.status(201).json({message: 'successfuly create new user'})
+      return  res.status(201).json({userData:userData, message: 'successfuly create new user'})
      })
 
     }else{

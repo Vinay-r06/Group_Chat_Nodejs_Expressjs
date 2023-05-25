@@ -6,9 +6,12 @@ exports.postSentMessage= async(req,res,next)=>{
     try{
          
       const message = req.body.message;
-      console.log('checking user', await req.user);
+      //console.log('checking user', await req.user);
+      const user= await req.user;
       const data= await req.user.createChat({
-        message:message
+
+        message:message,
+        username:user.name
       },{transaction:t}); 
       await t.commit();
      return res.status(201).json({success:true, chatData:data});
@@ -23,8 +26,8 @@ exports.postSentMessage= async(req,res,next)=>{
 
 exports.getChats=async(req,res,next)=>{
     try{
-        
-       return  res.status(201).json({success:true});
+        const chats= await Chat.findAll();
+       return  res.status(201).json({success:true, chatData:chats});
     }catch(err){
         return res.status(500).json({success:false, error:err})
     }
