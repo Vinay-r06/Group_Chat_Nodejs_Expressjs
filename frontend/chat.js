@@ -5,8 +5,9 @@ const chatForm= document.getElementById('chatForm');
 chatForm.addEventListener('submit', sendMessage);
 const chatDiv= document.getElementById('chatDiv');
 
-window.addEventListener('DOMContentLoaded', async()=>{
+window.addEventListener('DOMContentLoaded',()=>{
     try{
+      setInterval(async()=>{
         let getchat= await axios.get('http://localhost:3000/chats', {headers: {'Authorization': token}})
             console.log(getchat);
 
@@ -19,6 +20,8 @@ window.addEventListener('DOMContentLoaded', async()=>{
               chatDiv.innerHTML='You joined <br>';
               chatForm.appendChild(chatDiv);
         }
+      },1000)
+
     }catch(err){
       console.log('Err Send_Message', err)
     }
