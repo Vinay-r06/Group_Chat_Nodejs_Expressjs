@@ -5,7 +5,7 @@ const User=require('../models/userModel');
 
 exports.authenticate =(req,res,next)=>{
     try{
-    const token=req.header('Authorization')
+    const token=req.header('Authentication')
     console.log('token>> here auth', token);
     const user=jwt.verify(token,'secretkey');       // user= had id and name
     console.log('userId>>>', user.userId)            // while decrypt we mentioned "used:id" while login "id" and "name"

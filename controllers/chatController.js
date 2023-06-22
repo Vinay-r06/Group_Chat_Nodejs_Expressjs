@@ -1,33 +1,41 @@
 const sequelize=require('../util/database');
 const Chat = require('../models/chatModel');
+const {Op} = require('sequelize')
 
 exports.postSentMessage= async(req,res,next)=>{
-    const t= await sequelize.transaction();
     try{
          
-      const message = req.body.message;
+      console.log(req);
       //console.log('checking user', await req.user);
-      const user= await req.user;
-      const data= await req.user.createChat({
+    const chats= await Chat.create({
+        message:req.body.text,
+        userName:req.user.name,
+        userId:req.user.id,
+        groupId:req.query.groupId,
+        time:new Date().getTime()
 
-        message:message,
-        username:user.name
-      },{transaction:t}); 
-      await t.commit();
-     return res.status(201).json({success:true, chatData:data});
+      }); 
+
+     return res.status(201).json({success:true, chatData:chats, message:'succesfully sent text'});
     }catch(err){
-      await t.rollback();
-    return res.status(500).json({success:false, message:'ERR in post message', error:err})
-      throw new Error(err);         
+    return res.status(500).json({success:false, message:'ERR in post message', message:err})       
     }
 }
 
 
 
-exports.getChats=async(req,res,next)=>{
+exports.getchat=async(req,res,next)=>{
     try{
-        const chats= await Chat.findAll();
-       return  res.status(201).json({success:true, chatData:chats});
+      
+      const groupId= req.query.groupId || null;
+      
+        const chats= await Chat.findAll({
+          where:{ groupId:groupId }
+        })
+       // console.log(chats);
+        return res.status(201).json({success:true, message:chats});
+
+
     }catch(err){
         return res.status(500).json({success:false, error:err})
     }

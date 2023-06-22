@@ -7,16 +7,39 @@
     <link rel="style" href="style.css">
     <title>Chat app</title>
 </head>
-<body>
-    <header class="centered"><h1>Chat App</h1></header>
+<body>    
+    <header class="header" id="header">
+        <h3 class="chatName" id="chatName"></h3>
 
-   <form id="chatForm" class="Form">
-    <div id="chatDiv"></div>
-    <div class="msgBox">
-   <input type="text" name="message" id="message" placeholder="Enter the message to send">
-   <input type="submit" value="Send">
-</div>
-</form>
+        </header>
+<h1>Chat Application </h1>
+<h3>Exiting Users</h3>
+<div id="usernamechat">
+
+</div><br>
+
+
+<form1>
+    <h3>Create Group</h3>
+    <form method="POST" id="createGroup" name="createGroup" onsubmit="createGroup(event)">
+        <label for="groupname">Group Name</label><br>
+        <input type="groupname" name="groupname" id="groupname" required/><br>
+        <label for="addppl">Invite member name</label><br>
+        <input type="addppl" name="addppl" id="addppl" required/><br><br>
+        <button type="submit" class="btn-lg">Create Group</button><br><br>
+
+</form1>
+
+
+<div id="groups-list">
+<h3 class="h3">My Groups<h3>
+    <ul id="groups">
+
+    </ul>
+</div><br><br>
+
+<a class="btn" href="./login.html">Logout</a>
+
         <script src="./chat.js"></script>
 
 

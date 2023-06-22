@@ -2,8 +2,8 @@ const User = require('../models/userModel');
 const bcrypt=require('bcrypt');
 const sequelize=require('../util/database');
 const jwt= require('jsonwebtoken');
-const {Op} = require('sequelize');
-const e = require('cors');
+
+
 
 
 
@@ -30,7 +30,7 @@ const postSignup= async (req,res)=>{
         return res.status(400).json({err: "bad parameters . something is missing"})
      }
    
-     const user = await User.findOne({ where: {[Op.or]:[{email:email},{phone:phone}] } });
+     const user = await User.findOne({ where:{email:email}});
 
      if(!user){
 
@@ -48,13 +48,12 @@ const postSignup= async (req,res)=>{
      })
 
     }else{
-             res.json({message:'User already registered, pleasr login'})
+             res.json({message:'User already registered, please login'})
     }
 
     } catch(err){
       await t.rollback();
-       return res.status(500).json({err: "User already exists"});
-       throw new Error(err);
+       return res.status(500).json({err: "something wrong in post"});
     } 
 
     
@@ -63,6 +62,7 @@ const postSignup= async (req,res)=>{
 
 const postlogin= async (req, res)=>{
   try{
+    
 const {email, password} = req.body;
 if(isstringinvalid(email) || isstringinvalid(password)){
   return res.status(400).json({message: "Email id or password is missing", success:false})
@@ -88,8 +88,18 @@ if(result===true){
   }
 }
 
+const getusers=async(req,res,next)=>{
+  try{
+ const getsignup=await User.findAll()
+ res.status(201).json({message:'successfully signup', users:getsignup})
 
-module.exports={postSignup,postlogin,generateAccessToken}
+  }catch(err){
+res.status(500).json({error:err})
+  }
+}
+
+
+module.exports={postSignup,postlogin,getusers,generateAccessToken}
 
 
 

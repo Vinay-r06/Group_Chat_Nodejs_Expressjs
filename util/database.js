@@ -14,7 +14,7 @@ const dotenv= require('dotenv')
 dotenv.config();
 
 const sequelize = new Sequelize(
-                   'chat-node', 
+                   'new-chat', 
                    'root',
                    'Mysql0602@', {
              dialect: 'mysql',
@@ -26,10 +26,10 @@ const sequelize = new Sequelize(
             //     host: process.env.DB_HOST
         }
           )  
-          console.log(process.env.DB_NAME)  
-          console.log(process.env.DB_USERNAME,)
-          console.log(process.env.DB_PASSWORD)
-          console.log(process.env.DB_HOST)             
+          // console.log(process.env.DB_NAME)  
+          // console.log(process.env.DB_USERNAME,)
+          // console.log(process.env.DB_PASSWORD)
+          // console.log(process.env.DB_HOST)             
 
 module.exports=sequelize;
 

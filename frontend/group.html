@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group window</title>
+</head>
+<body>
+    <h2 class="h2">Group Memebers</h2>
+    <ul class="a" id="user-list"></ul>
+
+
+    <form id="chatForm" class="Form">
+        <div id="chatDiv"></div>
+        <div class="msgBox" id="msgBox">
+       <input type="text" name="message" id="message" placeholder="Enter the message to send">
+       <input type="submit" value="Send">
+    </div>
+    </form><br><br>
+
+
+<h2 class="h2">Chats</h2>
+<ul>
+    <li class="b" id="groupform"></li>
+</ul><br><br>
+
+
+<div class="form">
+    <div id="removemember" class="remove">
+     <form id="removememberform">
+        <label for="removemember">Remove Memeber</label><br>
+        <input type="text" id="removemembers" name="removemembers"><br><br>
+        <button class="btn" type="submit">Remove</button><br>
+     </form>
+    </div>
+</div>
+<br>
+<br
+
+>
+
+<div class="form">
+    <div id="adminmember" class="admin">
+     <form id="adminform">
+        <label for="admin">Make Admin</label><br>
+        <input type="text" id="admin" name="admin"><br><br>
+        <button class="btn" type="submit">Admin</button><br>
+     </form>
+    </div>
+</div>
+<br>
+<a class="btn" href="./chat.html">Back to home</a>
+
+<script src="http://localhost:8000/socket.io/socket.io.js"></script>
+
+<script src="./group.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+
+
+
+</body>
+</html>
